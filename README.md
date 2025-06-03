@@ -1,6 +1,6 @@
 # LinkTree Generator
 
-This project creates a polished LinkTree builder that runs entirely in the browser. Share `index.html` with anyone and they can instantly build a custom page of links.
+This project creates a polished LinkTree builder that runs entirely in the browser. Open `link.html` and you'll be greeted with a short welcome screen, a quick form and finally your styled LinkTree.
 
 ## Features
 
@@ -9,19 +9,14 @@ This project creates a polished LinkTree builder that runs entirely in the brows
 - Responsive design using Bootstrap and Font Awesome icons.
 - Dark mode toggle.
 - Data is saved in the browser so refreshing the page keeps your links.
-- Customize background color, link color and font.
-- Export your LinkTree as a standalone HTML file.
 
 ## Usage
 
-1. Open `index.html` in any modern browser.
-2. Enter your name, profile image URL, and as many links as you like.
-3. Pick your preferred background color, link color and font.
-4. Click **Generate LinkTree** to display your links.
-5. Use **Download** to save a copy or **Edit** to make changes later.
+1. Open `link.html` in any modern browser.
+2. After the welcome screen fades, fill in your profile picture, username, tagline and links.
+3. Click **Generate My Linktree** to view your page.
+4. Data is saved locally so refreshing the page will keep your links. Use the back button to edit again if needed.
 
 Everything works locally with no server or sign-up required.
 
-## Link Page Template
-
-If you already have your content stored elsewhere, open `link.html`. Update the `data` object at the bottom of the file with your username, subtitle, profile picture and links. The page uses Tailwind CSS to display a modern card with a soft green gradient background and works great on mobile or desktop.
+The design uses Tailwind CSS with a soft green gradient background. The form dynamically builds your LinkTree without any server.
