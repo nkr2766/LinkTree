@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkTree Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        .link-row { margin-bottom: 0.5em; }
+        #link-tree { margin-top: 2em; }
+        #link-tree a { display: block; margin: 0.3em 0; }
+    </style>
+</head>
+<body>
+    <h1>Create Your LinkTree</h1>
+    <div id="form-container">
+        <label>
+            Your Name: <input type="text" id="name" />
+        </label>
+        <div id="links">
+            <div class="link-row">
+                <input type="text" placeholder="Platform (e.g., Twitter)" class="platform" />
+                <input type="text" placeholder="URL" class="url" />
+            </div>
+        </div>
+        <button id="add-link">Add Link</button>
+        <button id="generate">Generate LinkTree</button>
+    </div>
+    <div id="link-tree" style="display:none;">
+        <h2 id="display-name"></h2>
+        <div id="display-links"></div>
+    </div>
+
+    <script>
+        const addLinkBtn = document.getElementById('add-link');
+        const linksDiv = document.getElementById('links');
+        const generateBtn = document.getElementById('generate');
+        const linkTreeDiv = document.getElementById('link-tree');
+        const displayName = document.getElementById('display-name');
+        const displayLinks = document.getElementById('display-links');
+
+        addLinkBtn.addEventListener('click', () => {
+            const row = document.createElement('div');
+            row.className = 'link-row';
+            row.innerHTML = `<input type="text" placeholder="Platform" class="platform" /> <input type="text" placeholder="URL" class="url" />`;
+            linksDiv.appendChild(row);
+        });
+
+        generateBtn.addEventListener('click', () => {
+            const name = document.getElementById('name').value.trim();
+            const platforms = linksDiv.querySelectorAll('.platform');
+            const urls = linksDiv.querySelectorAll('.url');
+            displayLinks.innerHTML = '';
+            platforms.forEach((input, index) => {
+                const platform = input.value.trim();
+                const url = urls[index].value.trim();
+                if (platform && url) {
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.textContent = platform;
+                    link.target = '_blank';
+                    displayLinks.appendChild(link);
+                }
+            });
+            if (name) displayName.textContent = name + "'s Links";
+            linkTreeDiv.style.display = 'block';
+            document.getElementById('form-container').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
+
