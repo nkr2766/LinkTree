@@ -21,3 +21,7 @@ This project creates a polished LinkTree builder that runs entirely in the brows
 5. Use **Download** to save a copy or **Edit** to make changes later.
 
 Everything works locally with no server or sign-up required.
+
+## Link Page Template
+
+If you already have your content stored elsewhere, open `link.html`. Update the `data` object at the bottom of the file with your username, subtitle, profile picture and links. The page uses Tailwind CSS to display a modern card with a soft green gradient background and works great on mobile or desktop.
